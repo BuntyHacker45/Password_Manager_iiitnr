@@ -1,0 +1,58 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling */
+    background-color: rgb(6, 5, 90);
+  }
+  
+  .hover-menu {
+    position: relative;
+    width: 100%; /* Full width of the viewport */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .hover-menu img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    transition: 0.3s ease-in-out;
+  }
+  
+  .hover-menu nav {
+    position: absolute;
+    top: 0;
+    left: -200px; /* Increased to make the box wider */
+    width: 200px; /* Increased width for a wider box */
+    height: 100%;
+    background: #000;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hover-menu nav a {
+    display: block;
+    color: #fff;
+    opacity: 0.8;
+    position: relative;
+    padding: 20px; /* Added padding for better spacing */
+    text-align: center;
+    font-size: 24px; /* Increased font size for larger text */
+    transition: 0.3s ease-in-out;
+  }
+  
+  .hover-menu:hover img {
+    opacity: 0.5;
+    right: -200px; /* Adjusted to match the new width */
+  }
+  
+  .hover-menu:hover nav {
+    left: 0;
+    opacity: 1;
+  }
+  

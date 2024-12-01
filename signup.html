@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/jpeg" href="icon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Password Manager</title>
+   
+    
+
+</head>
+<style>
+    body{
+        background-image: url("leo.jpg");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.signup-box {
+    background: linear-gradient(black, black, rgb(2, 40, 100));
+    border: 1px solid rgb(112, 219, 149);
+    border-radius: 8px;
+    max-width: 400px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.signup-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.signup-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-box label {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.signup-box input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.signup-box button {
+    padding: 10px;
+    font-size: 1rem;
+    background: rgb(22, 169, 73);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-box button:hover {
+    background: rgb(11, 101, 11);
+    color: white;
+}
+
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+</style>
+<body>
+    <div class="logo">
+        <img src="icon.jpg" alt="Password Manager Logo">
+        <div class="logo-text">Password Manager</div>
+    </div>
+
+    <div class="container">
+        <div class="signup-box">
+            <form action="/signup" method="post" onsubmit="return validateForm()">
+                <input type="text" name="username" id="username" placeholder="Create Username" required minlength="4">
+                <input type="password" name="password" id="password" placeholder="Create Password" required minlength="8">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <div id="error-message" class="error-message"></div>
+            <div class="login-link">
+                <a style="color: rgb(224, 231, 234);" href="login.html">Already have an account? Log in</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match!";
+                return false;
+            }
+
+            if (password.length < 8) {
+                errorMessage.textContent = "Password must be at least 8 characters long!";
+                return false;
+            }
+
+            if (username.length < 4) {
+                errorMessage.textContent = "Username must be at least 4 characters long!";
+                return false;
+            }
+
+            // Store credentials in localStorage
+            localStorage.setItem(username, password);
+            
+            // Redirect to login page
+            window.location.href = "login.html";
+            return false; // Prevent form submission since we're handling the redirect
+        }
+    </script>
+</body>
+</html>

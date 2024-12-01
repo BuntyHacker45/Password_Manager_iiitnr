@@ -1,0 +1,188 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* About Section */
+.about-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Typography */
+.about-section h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2b6cb0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.about-section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a5568;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-section p {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.about-section ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-section ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.5;
+}
+
+.about-section ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    font-size: 1.2rem;
+    color: #2b6cb0;
+}
+
+/* Strong Text */
+.about-section strong {
+    color: #2b6cb0;
+}
+
+/* Spacing and Alignment */
+.about-section p,
+.about-section ul {
+    margin-bottom: 1.5rem;
+}
+
+/* Center Content */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section h1, h2 {
+    animation: fadeIn 2s ease;
+}
+
+/* Hover Effects */
+.about-section ul li:hover {
+    color: #2b6cb0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 1.5rem;
+    }
+    .about-section h1 {
+        font-size: 1.8rem;
+    }
+    .about-section h2 {
+        font-size: 1.3rem;
+    }
+    .about-section p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 1rem;
+    }
+    .about-section h1 {
+        font-size: 1.5rem;
+    }
+    .about-section h2 {
+        font-size: 1.2rem;
+    }
+    .about-section p {
+        font-size: 0.8rem;
+    }
+}
+body {
+    background-image: url('p.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.about-section {
+    color: white; /* Adjust text color if needed for contrast */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: to add a transparent dark overlay */
+}
+body {
+    background-image: url('p.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.about-section {
+    color: white; /* Text color */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: subtle shadow effect */
+}
+
+h1, h2 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Optional: subtle text shadow */
+}
